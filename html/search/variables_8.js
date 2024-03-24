@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quick_5ftimes_0',['quick_times',['../namespacemain.html#aa71570e4a98ca40a11f2869ab1fa4f05',1,'main']]]
+  ['residents_5fnumber_0',['residents_number',['../classmain_1_1_apartment.html#acdd658ed20980dcc6c9e1933282d6224',1,'main::Apartment']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fake_0',['fake',['../namespacemain.html#a5f71ce6439089179f7b1fda04979294a',1,'main']]]
+  ['house_5fnumber_0',['house_number',['../classmain_1_1_apartment.html#ad727c23f29dcbb6b04eca9a2c9b57d05',1,'main::Apartment']]]
 ];

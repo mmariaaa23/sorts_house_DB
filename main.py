@@ -13,9 +13,9 @@ from bubbleSort import bubbleSort
 from insertionSort import insertionSort
 from quickSort import quickSort
 
-fake = Faker("ru_RU")  # Single Faker instance with locale
+# fake = Faker("ru_RU")  # Single Faker instance with locale
 
-df = pd.read_csv("/Users/avvemassha/PycharmProjects/pythonProject2/train.csv")
+df = pd.read_csv("train_extended.csv")
 
 # names_list = [fake.name() for _ in range(10000)]
 # df["owner_name"] = names_list
@@ -24,33 +24,33 @@ df = pd.read_csv("/Users/avvemassha/PycharmProjects/pythonProject2/train.csv")
 # df.to_csv("train.csv")
 
 
-# @brief разделяю датасет на наборы для сортировки
+"""разделяю датасет на наборы для сортировки"""
 
-df_1 = df[:500]  # 500
+df_1 = df[:50000]  # 500
 df_1 = df_1.drop(["Rooms"], axis=1)
 df_1.to_csv("data_1.csv")
 
-df_2 = df[500:1100]  # 600
+df_2 = df[:60000]  # 600
 df_2 = df_2.drop(["Rooms"], axis=1)
 df_2.to_csv("data_2.csv")
 
-df_3 = df[1100:1700]  # 700
+df_3 = df[:70000]  # 700
 df_3 = df_3.drop(["Rooms"], axis=1)
 df_3.to_csv("data_3.csv")
 
-df_4 = df[1700:2500]  # 800
+df_4 = df[:80000]  # 800
 df_4 = df_4.drop(["Rooms"], axis=1)
 df_4.to_csv("data_4.csv")
 
-df_5 = df[2500:3400]  # 900
+df_5 = df[:90000]  # 900
 df_5 = df_5.drop(["Rooms"], axis=1)
 df_5.to_csv("data_5.csv")
 
-df_6 = df[3400:4400]  # 1000
+df_6 = df[:95000]  # 1000
 df_6 = df_6.drop(["Rooms"], axis=1)
 df_6.to_csv("data_6.csv")
 
-df_7 = df[4400:5500]  # 1100
+df_7 = df[:100000]  # 1100
 df_7 = df_7.drop(["Rooms"], axis=1)
 df_7.to_csv("data_7.csv")
 
@@ -59,7 +59,7 @@ df_7.to_csv("data_7.csv")
 # df_8.to_csv("data_8.csv")
 
 
-# @brief для перегрузки операторов сначала создаю класс объекта из датасета
+""" для перегрузки операторов сначала создаю класс объекта из датасета"""
 class Apartment:
     def __init__(
         self,
@@ -168,7 +168,7 @@ class Apartment:
 # print(apartment1 <= apartment2)
 
 
-# @brief функции сортировок написаны для массивов, => формирую из датасетов правильный формат
+"""функции сортировок написаны для массивов, => формирую из датасетов правильный формат"""
 df_1 = pd.read_csv("data_1.csv")
 mas_1 = []
 for i in range(len(df_1)):
@@ -269,7 +269,7 @@ for i in mass:
     x.append(len(i))
 print(x)
 
-# @brief сортировка пузырьком
+"""сортировка пузырьком"""
 bubble_times = []
 for i, mas in enumerate(mass):
     tmp = mas[:]
@@ -284,7 +284,7 @@ for i, mas in enumerate(mass):
 print(bubble_times)
 plt.plot(x, bubble_times)
 
-# сортировка вставкой
+"""сортировка вставкой"""
 insertion_times = []
 for i, mas in enumerate(mass):
     tmp = mas[:]
@@ -299,7 +299,7 @@ for i, mas in enumerate(mass):
 print(insertion_times)
 plt.plot(x, insertion_times)
 
-# @brief быстрая сортировка
+"""быстрая сортировка """
 quick_times = []
 for i, mas in enumerate(mass):
     tmp = mas[:]
@@ -315,6 +315,7 @@ print(quick_times)
 plt.plot(x, quick_times)
 
 
-# @brief отрисовка графиков
+"""отрисовка графиков"""
+plt.yscale('log')
 plt.legend(("bubble", "insertion", "quick"))
 plt.show()
